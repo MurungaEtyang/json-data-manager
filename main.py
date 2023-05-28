@@ -1,5 +1,7 @@
 import json
 import hashlib
+import pywhatkit
+
 print("Validate Data")
 username = input("Enter your username: ")
 new_password = input("Enter your password: ")
@@ -17,6 +19,7 @@ for section in data1:
 
 if matching_section:
     matching_json = json.dumps(matching_section, indent=2)
-    print(matching_json)
+    pywhatkit.sendwhatmsg("PHONE NUMBER", matching_json,17, 11)
+    print(matching_json, type(matching_json))
 else:
     print("Invalid username or password")
